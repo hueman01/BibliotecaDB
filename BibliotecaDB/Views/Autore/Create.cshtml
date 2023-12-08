@@ -1,0 +1,40 @@
+﻿@model BibliotecaDB.Models.Autore
+@{
+    ViewData["Title"] = "Crear Autor";
+}
+<div class="alert alert-primary">
+    <h1 class="text-center"> Crear Autor</h1>
+</div>
+
+<div>
+    <form asp-action="Create" enctype="multipart/form-data">
+        <div>
+            <label class="form-label">Nombre Autor</label>
+
+            <input class="form-control" asp-for="NombreAutor" />
+            <span class="badge bg-danger" asp-validation-for="NombreAutor"></span>
+        </div>
+        <div>
+            <label class="form-label">Nacionalidad</label>
+
+            <input class="form-control" asp-for="Nacionalidad" />
+            <span class="badge bg-danger" asp-validation-for="Nacionalidad"></span>
+        </div>
+
+        <div>
+            <label class="form-label">Fecha Nacimiento</label>
+
+            <input class="form-control" asp-for="FechaNacimiento" />
+            <span class="badge bg-danger" asp-validation-for="FechaNacimiento"></span>
+        </div>
+      
+        <div class="text-end mt-3">
+            <input type="reset" class="btn btn-light" value="Limpiar" />
+            <input type="submit" class="btn btn-danger" value="Guardar" />
+        </div>
+    </form>
+
+
+
+</div>
+

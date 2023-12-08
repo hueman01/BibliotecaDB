@@ -1,0 +1,56 @@
+﻿@model BibliotecaDB.Models.Prestamo
+
+@{
+    ViewData["Title"] = "Crear Prestamo";
+}
+<div class="alert alert-primary">
+    <h1 class="text-center"> Crear Prestamo</h1>
+</div>
+<div>
+    <form asp-action="Create" enctype="multipart/form-data">
+        <div>
+            <label>Cliente</label>
+            @*asp-items permite cargar la lista con las categorías*@
+            <select class="form-select" asp-for="IdCliente" asp-items="ViewBag.IdCliente">
+                <option selected disabled>Seleccione Cliente</option>
+            </select>
+            <span class="badge bg-danger" asp-validation-for="IdCliente"></span>
+        </div>
+        <div>
+        <label>Categoria</label>
+        @*asp-items permite cargar la lista con las categorías*@
+        <select class="form-select" asp-for="IdCategoria" asp-items="ViewBag.IdCategoria">
+            <option selected disabled>Seleccione Categoría</option>
+        </select>
+        <span class="badge bg-danger" asp-validation-for="IdCategoria"></span>
+        </div>
+        <div>
+            <label>Fecha Prestamo</label>
+            <input class="form-control" asp-for="FechaPrestamo" />
+            <span class="badge bg-danger" asp-validation-for="FechaPrestamo"></span>
+        </div>
+        <div>
+            <label>Fecha devolucion</label>
+            <input class="form-control" asp-for="FechaDevolucionPrevista" />
+            <span class="badge bg-danger" asp-validation-for="FechaDevolucionPrevista"></span>
+        </div>
+        <div>
+            <label>estado</label>
+            <input class="form-control" asp-for="Estado" />
+            <span class="badge bg-danger" asp-validation-for="Estado"></span>
+        </div>
+        <div>
+            <label>Titulo</label>
+            <input class="form-control" asp-for="Titulo"/>
+            <span class="badge bg-danger" asp-validation-for="Titulo"></span>
+        </div>
+        
+     
+
+        <div class="text-end mt-3">
+            <input type="reset" class="btn btn-info" value="Limpiar" />
+            <input type="submit" class="btn btn-success" value="Guardar" />
+        </div>
+     </form>
+    
+</div>

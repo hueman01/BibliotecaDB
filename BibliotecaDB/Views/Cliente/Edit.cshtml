@@ -1,0 +1,58 @@
+﻿@*cargar el modelo en la vista*@
+@model BibliotecaDB.Models.Cliente
+@{
+    //permite tener el titulo de la página con diferentes nombres
+    ViewData["Title"] = "Editar Cliente";
+}
+
+<h1 class="text-center">Editar Cliente</h1>
+<div>
+    @*asp-action permite acceder a un método del controlador*@
+    <form asp-action="Edit">
+        <input type="hidden" asp-for="IdCliente" />
+        <div>
+            <label class="form-label">Nombre</label>
+            @*asp-for es un helper que permite asignar el mismo nombre y id de la clase
+            a los input*@
+            <input type="text" class="form-control" asp-for="Nombre" />
+            @*validation-for permite validar algunos parametros*@
+            <span asp-validation-for="Nombre" class="badge bg-danger"></span>
+        </div>
+        <div>
+            <label class="form-label">Apellido</label>
+            @*asp-for es un helper que permite asignar el mismo nombre y id de la clase
+            a los input*@
+            <input type="text" class="form-control" asp-for="Apellido" />
+            @*validation-for permite validar algunos parametros*@
+            <span asp-validation-for="Apellido" class="badge bg-danger"></span>
+        </div>
+        <div>
+            <label class="form-label">Direcciom</label>
+            @*asp-for es un helper que permite asignar el mismo nombre y id de la clase
+            a los input*@
+            <input type="text" class="form-control" asp-for="Direccion" />
+            @*validation-for permite validar algunos parametros*@
+            <span asp-validation-for="Direccion" class="badge bg-danger"></span>
+        </div>
+        <div>
+            <label class="form-label">Correo</label>
+            @*asp-for es un helper que permite asignar el mismo nombre y id de la clase
+            a los input*@
+            <input type="email" class="form-control" asp-for="CorreoElectronico" />
+            @*validation-for permite validar algunos parametros*@
+            <span asp-validation-for="CorreoElectronico" class="badge bg-danger"></span>
+        </div>
+        <div>
+            <label class="form-label">Telefono</label>
+            @*asp-for es un helper que permite asignar el mismo nombre y id de la clase
+            a los input*@
+            <input type="number" class="form-control" asp-for="Telefono" />
+            @*validation-for permite validar algunos parametros*@
+            <span asp-validation-for="Telefono" class="badge bg-danger"></span>
+        </div>
+        <div class="text-end mt-3">
+            <a class="btn btn-secondary" asp-action="Index" asp-controller="Categoria">Volver</a>
+            <input type="submit" class="btn btn-primary" value="Guardar" />
+        </div>
+    </form>
+</div>

@@ -1,0 +1,45 @@
+﻿@model BibliotecaDB.Models.Empleado
+@{
+    ViewData["Title"] = "Crear Empleado";
+}
+<div class="alert alert-primary">
+    <h1 class="text-center"> Crear Empleado</h1>
+</div>
+
+<div>
+    <form asp-action="Create" enctype="multipart/form-data">
+        <div>
+            <label class="form-label">Nombre Empleado</label>
+
+            <input class="form-control" asp-for="Nombre" />
+            <span class="badge bg-danger" asp-validation-for="Nombre"></span>
+        </div>
+        <div>
+            <label class="form-label">Apellido Empleado</label>
+
+            <input class="form-control" asp-for="Apellido" />
+            <span class="badge bg-danger" asp-validation-for="Apellido"></span>
+        </div>
+
+        <div>
+            <label class="form-label">Cargo</label>
+
+            <input class="form-control" asp-for="Cargo" />
+            <span class="badge bg-danger" asp-validation-for="Cargo"></span>
+        </div>
+        <div>
+            <label class="form-label">Fecha Contratacion</label>
+
+            <input type="date" class="form-control" asp-for="FechaContratacion" />
+            <span class="badge bg-danger" asp-validation-for="FechaContratacion"></span>
+        </div>
+        
+        <div class="text-end mt-3">
+            <input type="reset" class="btn btn-light" value="Limpiar" />
+            <input type="submit" class="btn btn-danger" value="Guardar" />
+        </div>
+    </form>
+
+
+
+</div>

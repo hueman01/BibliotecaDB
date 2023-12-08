@@ -1,0 +1,27 @@
+﻿@*cargar el modelo en la vista*@
+@model BibliotecaDB.Models.Categoria
+@{
+    //permite tener el titulo de la página con diferentes nombres
+    ViewData["Title"] = "Crear Categoría";
+}
+
+<div class="alert alert-primary">
+<h1 class="text-center"> Crear Categorías</h1>
+</div>
+<div>
+    @*asp-action permite acceder a un método del controlador*@
+    <form asp-action="Create">
+        <div class="">
+            <label>Categoría</label>
+            @*asp-for es un helper que permite asignar el mismo nombre y id de la clase
+            a los input*@
+            <input type="text" class="form-control" asp-for="NombreCategoria" />
+            @*validation-for permite validar algunos parametros*@
+            <span asp-validation-for="NombreCategoria" class="badge bg-danger"></span>
+        </div>
+        <div class="text-end mt-3">
+            <input type="reset" class="btn btn-outline-info" value="Limpiar" />
+            <input type="submit" class="btn btn-primary" value="Guardar" />
+        </div>
+    </form>
+</div>

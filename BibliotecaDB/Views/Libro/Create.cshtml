@@ -1,0 +1,53 @@
+﻿@model BibliotecaDB.Models.Libro
+@{
+    ViewData["Title"] = "Crear Libro";
+}
+<div class="alert alert-primary">
+    <h1 class="text-center"> Crear Libro</h1>
+</div>
+
+<div>
+    <form asp-action="Create" enctype="multipart/form-data">
+        <div>
+            <label class="form-label">Titulo</label>
+
+            <input class="form-control" asp-for="Titulo" />
+            <span class="badge bg-danger" asp-validation-for="Titulo"></span>
+        </div>
+        <div>
+            <label>autor</label>
+            @*asp-items permite cargar la lista con las categorías*@
+            <select class="form-select" asp-for="IdAutor" asp-items="ViewBag.IdAutor">
+                <option selected disabled>Seleccione Autor</option>
+            </select>
+            <span class="badge bg-danger" asp-validation-for="IdAutor"></span>
+        </div>
+        <div>
+            <label class="form-label">Año Publicacion</label>
+
+            <input class="form-control" asp-for="AnioPublicacion" />
+            <span class="badge bg-danger" asp-validation-for="AnioPublicacion"></span>
+        </div>
+        <div>
+            <label class="form-label">Cantidad Disponible</label>
+
+            <input class="form-control" asp-for="CantidadDisponible" />
+            <span class="badge bg-danger" asp-validation-for="CantidadDisponible"></span>
+        </div>
+        <div>
+            <label>Categoria</label>
+            @*asp-items permite cargar la lista con las categorías*@
+            <select class="form-select" asp-for="IdCategoria" asp-items="ViewBag.IdCategoria">
+                <option selected disabled>Seleccione Categoría</option>
+            </select>
+            <span class="badge bg-danger" asp-validation-for="IdCategoria"></span>
+         </div>
+        <div class="text-end mt-3">
+            <input type="reset" class="btn btn-light" value="Limpiar" />
+            <input type="submit" class="btn btn-danger" value="Guardar" />
+        </div>
+    </form>
+
+
+
+</div>
